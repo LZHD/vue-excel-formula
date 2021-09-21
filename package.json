@@ -11,6 +11,7 @@
   "dependencies": {
     "core-js": "~3.6.5",
     "hyperformula": "^1.1.0",
+    "milligram": "^1.4.1",
     "vue": "^2.6.14",
     "vxe-table": "^3.3.12",
     "xe-utils": "^3.3.2"

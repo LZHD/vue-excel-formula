@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <EmployeesDataProvider>
+      <div slot-scope="{ data, totals, setWithCalculationsFlag }">
+        <TableActions :setWithCalculationsFlag="setWithCalculationsFlag" />
+        <Table :data="data" :totals="totals" />
+      </div>
+    </EmployeesDataProvider>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import 'milligram';
+import EmployeesDataProvider from './employees';
+import Table from '@/components/Table';
+import TableActions from '@/components/TableActions';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    EmployeesDataProvider,
+    TableActions,
+    Table,
   },
 };
 </script>
@@ -21,8 +30,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  //text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  counter-reset: row-counter;
 }
 </style>
